@@ -1,0 +1,22 @@
+steps:
+
+Step 1: Create new django-project
+		-> django-admin startproject "ProjectName"
+		
+Step 2: Run the server
+		-> Project-root-path> python manage.py runserver
+
+Step 3: Create new app
+		-> Project-root-path > python manage.py startapp "AppName"
+		
+Step 4: URLs mapping's settings
+		-> Snippet: url(r'^contacts/, include('contacts.urls')),
+ 
+ 
+After making changes to any app's Model:
+		-> Project-root-path > python manage.py makemigrations "AppName"
+		// you can check the queries that will be performed by:
+		  -> python manage.py sqlmigrate "AppName" 0001
+		-> Project-root-path > python manage.py migrate
+ 
+ 

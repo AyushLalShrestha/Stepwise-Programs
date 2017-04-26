@@ -1,0 +1,13 @@
+1. From Course.model import course
+
+2. Course.objects.all()
+
+3. course1 = Course(title="Python Basics", details="Learn about Core Python")
+   course1.save()
+   or
+   Course.objects.create(title="Python Basics", details="Learn about Core Python")
+   or
+   john = Author.objects.create(name="John")
+   
+4. Course.objects.filter(title="Python Basics")   
+   cheese_blog = Blog.objects.get(name="Cheddar Talk")	

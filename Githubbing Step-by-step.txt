@@ -1,0 +1,15 @@
+
+//Pushing an already existing harddrive local Project to a github Repo
+git init
+git add --all     // Or you can specify the filename to be uploded
+git commit -m "first commit"
+git remote add origin https://github.com/AyushLalShrestha/Stepwise-Programs.git
+git push -u origin master
+
+---------------------------------------------------->
+//Pushing a brand new Repo
+//First make a Repo in Github
+git clone "github repo link"
+git add --all
+git commit -m "Comment"
+git push -u origin master
