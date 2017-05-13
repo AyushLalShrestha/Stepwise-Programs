@@ -6,9 +6,9 @@
 	product = ProductSerializer() //will be in this same file
 	customer = CustomerSerializer() //will be in this same file
 	
-	class meta:
+	class Meta:
 		model = Sales
-		fields = ('id', 'product', 'customer') //  fields = '__all__'
+		field = ('id', 'product', 'customer') //  fields = '__all__'
 		
 -----------------------------------------------------------------------------------------------
 // In urls.py file :
@@ -28,8 +28,12 @@ urlpatterns = format_suffix_patterns(urlpatterns)
  from models import Sales
  
  class SalesList(generics.ListCreateAPIView):
-	queryset = Sales.objects.all()
+	queryset = Sale.objects.all()
 	serializer_class = SalesSerializer 
+	
+	//queryset = Sale.objects.all()
+    //serializer_class = SaleSerializer
+    //permission_classes = (IsAdminUser,)
  
 // cmd line -> Python manage.py collectstatic 
  
