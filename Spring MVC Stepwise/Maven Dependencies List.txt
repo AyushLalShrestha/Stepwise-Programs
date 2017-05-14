@@ -1,0 +1,14 @@
+Maven dependencies for Spring WEB MVC {maybe with Hibernate, Security....}
+
+1. spring-webmvc from org.springframework
+2. spring-orm from org.springframework
+
+3. hibernate-core from org.hibernate
+
+4. mysql-connector-java from mysql
+
+5. jackson-core from com.fasterxml.jackson.core
+
+6. spring-security-config from org.springframework.security
+7. spring-security-core from org.springframework.security
+8. spring-security-web from org.springframework.security

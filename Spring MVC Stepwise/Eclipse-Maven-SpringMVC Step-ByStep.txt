@@ -7,13 +7,17 @@ Step 2: Make Targeted Runtime Apache Tomcat Server
 Step 3: Configure Project File Structure from 'Java Build Path' - 'source'  
 		-> (structure: src/main/java, src/test/java, src/main/webapp/WEB-INF)
 		
-Step 4: Configure web.xml : http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/index.html#1		
+Step 4: Configure Deployment assembly as well
+		-> Make sure to also add Maven Dependencies in 'WEB-INF/lib' deploy path
+		
+Step 5: Configure web.xml : http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/index.html#1		
 		-> Define maven plugin java related settings in pom.xml
 		
-Step 5: Manage Spring Framework dependencies in pom.xml
+Step 6: Manage Spring Framework dependencies in pom.xml
 		-> [spring-context, spring-webmvc, mysql, spring-orm, hibernate-orm]
+		-> * May also require [log4j & slf4j-log4j] dependency // Will require log4j.properties file in 'resources' folder
 		
-Step 6: Right-click - Maven - Update Projects
+Step 7: Right-click - Maven - Update Projects
 
-Step 7: Setup 'dispatcher-servlet.xml' & 'applicationContext.xml' in 'src/main/webapp/WEB-INF'
+Step 8: Setup 'dispatcher-servlet.xml' & 'applicationContext.xml' in 'src/main/webapp/WEB-INF'
 		
