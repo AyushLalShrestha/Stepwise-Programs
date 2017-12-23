@@ -2,12 +2,16 @@
 
 CREATE database Citizen_Information;
 
-CREATE table tbl_citizens (
-	citizen_id varchar(50) PRIMARY KEY,
-	Name varchar(50) NOT NULL,
-	
-	);
+CREATE TABLE tutorials_tbl(
+		tutorial_id INT NOT NULL AUTO_INCREMENT,
+		tutorial_title VARCHAR(100) NOT NULL,
+		tutorial_author VARCHAR(40) NOT NULL,
+		submission_date DATE,
+		PRIMARY KEY ( tutorial_id )
+		);
 
+DROP TABLE tutorials_tbl;		
+		
 ALTER table tbl_citizens
 	add column tbl_citizens int;
 
@@ -22,6 +26,13 @@ ALTER TABLE Orders
 DELETE FROM table_name
 WHERE some_column=some_value;	
 
+ALTER TABLE testalter_tbl DROP roll;
+ALTER TABLE testalter_tbl ADD roll INT FIRST;
+									OR
+ALTER TABLE testalter_tbl ADD roll INT AFTER name;
+
+ALTER TABLE testalter_tbl MODIFY name CHAR(10);
+ALTER TABLE testalter_tbl CHANGE name f_name varchar(10);
 -------------------------------------------------------------------------->
 
 CREATE TABLE shop (
@@ -33,6 +44,9 @@ CREATE TABLE shop (
 INSERT INTO shop VALUES
     (1,'A',3.45),(1,'B',3.99),(2,'A',10.99),(3,'B',1.45),
     (3,'C',1.69),(3,'D',1.25),(4,'D',19.95);
+	
+INSERT INTO table_name ( field1, field2,...fieldN )
+	VALUES ( value1, value2,...valueN );	
 
 SELECT s1.article, s1.dealer, s1.price
 	FROM shop s1

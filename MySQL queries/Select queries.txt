@@ -1,0 +1,20 @@
+SELECT field1, field2,...fieldN 
+		FROM table_name1, table_name2...
+		[WHERE Clause]
+		[OFFSET M ][LIMIT N]   //OFFSET = Where to start from, LIMIT = Max no. of returns
+		
+SELECT field1, field2,...fieldN table_name1, table_name2...
+[WHERE condition1 [AND [OR]] condition2.....
+	The WHERE clause is very useful when you want to fetch the selected rows from a table, especially when you use the MySQL Join.
+
+SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+		FROM tutorials_tbl a, tcount_tbl b
+		WHERE a.tutorial_author = b.tutorial_author;
+
+SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+		FROM tutorials_tbl a LEFT JOIN tcount_tbl b
+		ON a.tutorial_author = b.tutorial_author;
+	
+SELECT * from tutorials_tbl 
+		WHERE tutorial_author LIKE '%jay';	//Author's name ending with jay
+	
