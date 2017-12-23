@@ -1,0 +1,29 @@
+Some more Commands: 
+
+db.collection.find(<query>)	
+
+coll.find( { name: "Joe" } );
+
+db.collection.find(<query>, <projection>)	
+
+coll.find( { }, { name: true } );
+
+db.collection.find().sort(<sort order>)	
+
+coll.find().sort( { name: 1 } );
+db.collection.find(<query>).sort(<sort order>) 	#Return the documents matching the <query> criteria in the specified <sort order>.
+db.collection.find( ... ).limit( <n> )	 #Limit result to <n> rows. Highly recommended if you need only a certain number of rows for best performance.
+db.collection.find( ... ).skip( <n> )	#Skip <n> results.
+db.collection.count()
+db.collection.find(<query>).count()	 #Returns the total number of documents that match the query.
+db.collection.findOne(<query>)	   #Find and return a single document. Returns null if not found.
+
+coll.findOne( { name: "Joe" } );
+Internally, the findOne() method is the find() method with a limit(1).
+
+
+
+
+
+
+

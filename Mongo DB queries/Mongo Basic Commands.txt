@@ -1,0 +1,24 @@
+Mongo Commands:
+
+Show  present databases:
+				> show dbs 
+				> show databases
+
+Show Collections present in the current database:
+				->show collections	
+				
+Use a database:
+				> use <db>	
+
+Make a new database and insert a 				
+				> use testdb;
+				> s = { Name : "TecAdmin.net" }
+				> db.testData.insert( s );				
+				
+Show all Fields present in the Collection:
+				> db.collectionName.findOne()
+				> db.collectionName.find().pretty()
+
+Insert a Column/Field:
+				> db.collection.insertOne()
+				> db.collection.insertMany() 		

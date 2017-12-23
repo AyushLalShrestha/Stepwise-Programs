@@ -1,0 +1,64 @@
+Search and Find Queries:
+
+# The following example retrieves all documents from the inventory collection where status equals either "A" or "D":
+	> db.students.find( { address: { $in: [ "Sanepa", "Jhamsikhel" ] } } )
+	
+# SELECT user_id, status FROM users
+			>	db.users.find( { }, { user_id: 1, status: 1, _id: 0 } )	
+
+# SELECT user_id, status FROM users WHERE status = "A"
+			>	db.users.find( { status: "A" },  { user_id: 1, status: 1, _id: 0 }   )					
+			
+# SELECT * FROM users WHERE status != "A"
+			>	db.users.find( { status: { $ne: "A" } }  )
+
+# SELECT * FROM users WHERE status = "A" AND age = 50 
+	 		> db.users.find( { status: "A", age: 50 } )
+
+# SELECT * FROM users WHERE status = "A" OR age = 50
+			> db.users.find( { $or: [ { status: "A" } , { age: 50 } ] }  )
+
+# SELECT * FROM users WHERE age > 25
+			> db.users.find( { age: { $gt: 25 } }  )
+
+# SELECT * FROM users WHERE age < 25
+			> db.users.find( { age: { $lt: 25 } } )
+
+# SELECT * FROM users WHERE age > 25 AND   age <= 50
+			> db.users.find( { age: { $gt: 25, $lte: 50 } } )
+
+# SELECT * FROM users WHERE user_id like "%bc%"
+			> db.users.find( { user_id: /bc/ } )
+
+# SELECT * FROM users WHERE user_id like "bc%"
+			> db.users.find( { user_id: /^bc/ } )
+
+# SELECT * FROM users WHERE status = "A" ORDER BY user_id ASC
+			> db.users.find( { status: "A" } ).sort( { user_id: 1 } )
+
+# SELECT * FROM users WHERE status = "A" ORDER BY user_id DESC
+			> db.users.find( { status: "A" } ).sort( { user_id: -1 } )
+
+# SELECT COUNT(*) FROM users
+			> db.users.count()
+			> db.users.find().count()  
+
+# SELECT COUNT(user_id) FROM users
+			> db.users.count( { user_id: { $exists: true } } )
+			> db.users.find( { user_id: { $exists: true } } ).count()
+
+# SELECT COUNT(*) FROM users WHERE age > 30
+			> db.users.count( { age: { $gt: 30 } } )
+			> db.users.find( { age: { $gt: 30 } } ).count()
+
+# SELECT DISTINCT(status) FROM users
+			> db.users.distinct( "status" )
+
+# SELECT * FROM users LIMIT 1
+			> db.users.findOne()
+			> db.users.find().limit(1)
+
+# SELECT * FROM users LIMIT 5 SKIP 10
+			> db.users.find().limit(5).skip(10)
+			
+				
