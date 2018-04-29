@@ -1,5 +1,7 @@
 
 
+# Expose an API from django using djangorestframework i.e rest_framework
+
 ## Make a serializer.py file in the app : 
 ``` from rest_framework import serializers
  from models import Customer, Product, Sales
@@ -19,12 +21,13 @@
  from models import Sales
  
  class SalesList(generics.ListCreateAPIView):
+ # class SalesList(viewsets.ModelViewSet):
 	queryset = Sale.objects.all()
 	serializer_class = SalesSerializer 
 	
-	//queryset = Sale.objects.all()
-    //serializer_class = SaleSerializer
-    //permission_classes = (IsAdminUser,)
+	#queryset = Sale.objects.all()
+    	#serializer_class = SaleSerializer
+    	#permission_classes = (IsAdminUser,)
 ``` 
 -----------------------------------------------------------------------------------------------
 ## In urls.py file :
