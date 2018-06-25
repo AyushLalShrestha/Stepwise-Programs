@@ -1,0 +1,22 @@
+ganache-cli (testrpc) & truffle:  npm install -g ganache-cli 
+ganache-cli  npm install -g truffle
+truffle init
+truffle compile
+truffle migrate
+truffle test
+Npm run dev
+
+// The above instructions should’ve worked, but didn’t work. Try these:
+
+npm init
+sudo npm install web3@0.20.0 solc
+
+Node
+> Web3 = require('web3')
+> web3 = new Web3(new Web3.providers.HttpProvider(‘http://localhost:8545'))
+> web3.eth.accounts
+> solc = require(“solc”)
+> sourceCode = fs.readFileSync(‘Greetings.sol’).toString()
+> compiledCode = solc.compile(sourceCode)
+> 
+
